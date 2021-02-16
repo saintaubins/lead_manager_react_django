@@ -1,0 +1,35 @@
+pip install pipenv
+
+pipenv shell
+
+pipenv install django djangorestframework django-rest-knox
+
+django-admin startproject leadmanager
+
+cd leadmanager
+
+python manage.py startapp leads
+
+go to settings.py installed apps, insert: 'leads', 'rest_framework', 
+
+go make a model in leads api, in class form
+
+we need to now make a migration, python manage.py makemigrations, python manage.py migrate.
+
+go into leads api, create serilizers.py and inster the Serializer class.
+
+now make an api file in the leads api, called api.py
+
+next we will create the urls, start with the root url.
+
+then create a leads, url.py
+
+we should now have a basic crud api, we can run the server.
+
+after debug we can test it out with postman.
+
+
+
+
+
+
