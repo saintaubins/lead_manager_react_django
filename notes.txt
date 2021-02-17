@@ -81,5 +81,62 @@ then create in frontend/urls.py see file for code.
 
 then in lead manager urls.py add the just created url. 
 
+after any debugging we should be all set, we added navbar, and a few react components.
+
+**************************************************************************************
+
+setting up redux. note npm server in off
+
+npm i redux react-redux redux-thunk redux-devtools-extension
+
+npm run dev
+
+go to leadmanager/frontend/src -> create store.js see file for code
+
+in src create a folder called reducers, and a file within called index.js see file for code.
+
+then go to App.js in components, we want to import store, and Provider from reaxt-redux, and wrap the app
+with a Provider.
+
+next go back to rootreducer reducers in index.js and import leads, and export leads
+then go into reducers and create a file called leads.js
+
+follow flow to create actions, types.js etc.
+
+in actions folder create a leads.js
+
+before we continue, stop server and install axios.
+
+npm i axios, now restart server
+
+now to call the component, go to components/leads/Leads.js is where we call this from.
+
+everything should be working, after adding html to Leads.js,
+
+now to give functionality to the delete button, got to actions leads.js
+
+create and import the delete method, then go to types file, and create as well.
+
+then go to leads reducer, and create delete there. once that is completed, we need to go to Leads.js
+
+and import deletelead, and add the functionality for the UI, don't forget to export delete lead as well.
+
+test everything should work.
+
+**********************************************************************************************
+ 
+ now to add work to the lead from.
+
+go to components/leads/Form.js 
+
+follow through until all errors are gone
+
+********************************************************************************************
+
+
+
+
+
+
 
 
