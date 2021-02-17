@@ -28,8 +28,58 @@ we should now have a basic crud api, we can run the server.
 
 after debug we can test it out with postman.
 
+*****************************************************************
 
+Now creating a react app from scratch not using npx.
 
+Go to root directory of this folder.
+
+we will need access to manage.py, so go into lead manager.
+
+python manage.py startapp frontend
+
+mkdir -p ./frontend/src/components
+
+mkdir -p ./frontend/{static,templates}/frontend
+
+cd ..
+
+npm init -y
+
+npm i -D webpack webpack-cli
+
+npm i -D @babel/core babel-loader @babel/preset-env @babel/preset-react babel-plugin-transform-class-properties
+
+npm i react react-dom prop-types
+
+touch .babelrc, see file for the code
+
+touch webpack.config.js, see file for the code
+
+next go to package.json and make the scripts, see scripts section for the code.
+
+next we will create index.js.
+
+go to src folder and create index.js.
+
+in components, create a file caled App.js, see App.js for the code.
+
+next go templates/frontend, create a file called index.html
+
+next go to bootswatch.com, go to download in cosmo, and grab http link
+
+https://bootswatch.com/4/cosmo/bootstrap.min.css , and put that in index.html 
+
+then go to gettbootstrap.com -> get started -> go to js section, and grab the script link, 
+to get the js file, 
+
+then go to settings.py and register frontend in installed apps. 
+
+then go to frontend/views.py see file for code.
+
+then create in frontend/urls.py see file for code.
+
+then in lead manager urls.py add the just created url. 
 
 
 
