@@ -133,6 +133,74 @@ follow through until all errors are gone
 
 ********************************************************************************************
 
+we are now working on Error handleing and alerts, we need a few components.
+
+npm i react-alert react-alert-template-basic react-transition-group
+
+npm run dev
+
+then go to app.js and bring in the provider, and dependencies.
+
+See alertoptions, in app js how to set up alertprovider, alerttemplate, etc...
+
+now we are making an alert components.
+
+in components/layout create a file called Alerts.js
+
+in reducers create a new file called errors.js , and import that into index.js which is  the root reducer.
+
+we will have a new type, so in actions/types.js create a new type for errors
+
+then in the errors reducer, we will need to import get errors, see errors.js
+
+then go into leads action, we are going to adjust the error to catch the error, and not just console.log index.html
+
+we should be able to see the errors state in the redux dev tool,
+from here we have to import connect in Alerts.js
+
+after adding all dependencies, we should see everything works.
+
+*********************************************************************************************
+
+we are now going to add a delete notification message.
+
+go to reducers and create a new file called messages.js, see file for code.
+
+then go to types, and create the types, see types for the code.
+
+then we have to add to the root reducer, index.js in reducer
+
+then in actions, create a new file called messages.js, see file for code.
+
+then we go into actions/leads, and import createMessage, what we just created in messages.js 
+
+and in the deleteLead, we can dispatch a ceate message.
+
+once done go to Alerts.js in components/layout, and in mapstatetoprops, add the message state, and proptype above.
+
+see code for minor details.
+
+**************************************************************************************************
+
+now lets do the same for when a lead is added.
+
+so in leads.js lets copy the delete lead dispatch with the message, put it into add lead method.
+
+then in alerts, we can check for lead added.
+
+*************************************************************************************************
+
+we will be dealing with accounts now, and creating a new api.
+
+
+
+
+
+
+
+
+
+
 
 
 
