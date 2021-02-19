@@ -192,7 +192,74 @@ then in alerts, we can check for lead added.
 
 we will be dealing with accounts now, and creating a new api.
 
+In the backend we go to leads/models.py.
 
+We will import the User table, and assign a owner field, with a foreignkey.
+
+then python manage.py makemigrations, then migrate. then run server.
+
+then go to api.py and define the queryset, and permissions. see the file.
+
+next we will add the errors to the frontend. so we go to frontend/actions/leads.js
+
+in the get leads we will dispatch the get errors.
+
+in messages.js, same folder we will create a functions to return error mesages.
+
+then go back to leads, and bring in the error function just created in the messages file.
+
+and then replace the console.log with the dispatch statement.
+
+we should see we cannot get data wthout being logged in. 
+
+*********************************************************************************************
+
+now off to the backend again, settings.py add 'knox' to installed apps, and REST_FRAMEWORK dictionary.
+
+then run another migration.
+
+we next need to create serializers, for bringing in the leads. this could be done in the leads app, but we will be creating another app called accounts.
+
+so we run python manage.py startapp accounts.
+
+then go to settings.py and add the accounts app.
+
+go to the accounts app, and create a serializers.py file. see file for the code.
+
+then we need to create an api file just like in leads, see api.py for code.
+
+then make a urls.py file in account to create an endpoint.
+
+then create the urls just created in main url, in lead manager.
+
+we will then try to register a user with postman.
+
+we will set the post request to  http://localhost:8000/api/auth/register, note no froward slash.
+
+post request should now work.
+
+now lets go to serializers.py
+
+lets include the login serializer, see code for details.
+
+once we have a login serializer we need to create a login api, in api.py.
+
+once that is in, we have to create an endpoint in urls.py. see file for code.
+
+then we can to to postman and make a post request to the login endpoint. http://localhost:8000/api/auth/login
+
+with username and password, we should get authernticated.
+
+next we will be creating a get user api. in api.py. see code for details, then we need to create an end point in urls.py.
+
+we can verify this works in postman, with a get request to the user endpoint. 
+http://localhost:8000/api/auth/user  and in headers put authorization and value put Token token we just got from the login in the previous post request
+
+we should get back the user as a response.
+
+last thing in this section is to create a log out, we can inport a view for that in urls.py.
+
+see the logout line for invalidating the user token. we can also test this on postman.
 
 
 
