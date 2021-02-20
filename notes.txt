@@ -262,6 +262,79 @@ last thing in this section is to create a log out, we can inport a view for that
 see the logout line for invalidating the user token. we can also test this on postman.
 
 
+**************************************************************************************
+
+next we will be setting up Auth state, and private routes, so off to the front endpoint.
+
+npm i react-router-dom
+
+npm run dev
+
+go to app.js, and import some stuff from react router, then insert switch and route in the return render path.
+
+go to components, and create a folder called accounts.
+
+inside accounts, create a file called Login.js, and Register.js.
+
+we will start with register, rce tab, and add a little bit of state, see file for code.
+
+we will do the same for the login page with some subtle differences, see file for code.
+
+now we go to app.js and create routes for the pages just created.
+
+once in the routes, we need to add the links to the navbar, so we go to components/layout/Header.js
+
+see code for details.
+
+****************************************************************************************
+
+next we will be making an auth reducer to add to statement.
+
+go to index.js inside reducer folder, and add auth as import and export.
+
+and in the same folder create a file called auth.js
+
+from the basic code, we should be able to see state in the redux tool, for the auth reducer.
+
+we will be making a private route for people who are not logged in.
+
+so we go to components, and create a new folder called common. In common, create a file called PrivateRoute.js.
+
+see code, but for now if user is not authenticated, we will be redirected to the login page. 
+
+*******************************************************************************************
+
+
+now we need to check if user is logged in we need to check the state and we will implement this in app.js.
+
+but first we will go to actions/types.js as we are using redux.
+
+we will add 3 types, 
+export const USER_LOADING = 'USER_LOADING';
+export const USER_LOADED = 'USER_LOADED';
+export const AUTH_ERROR = 'AUTH_ERROR';
+
+
+then we go to reducers/auth.js and add the functions to do these actions. 
+
+so now we have those lets create in out action folder, a file called auth.js 
+
+we need to call this all the time so we go to app.js, and call everything we just did in there. 
+
+import auth, and add the lifecyle method componentdidmount and define this.
+
+for now we imported all neccessary data to validate a user, next we will setup, frontend authentication.
+
+*******************************************************************************************
+
+
+
+
+
+
+
+
+
 
 
 
