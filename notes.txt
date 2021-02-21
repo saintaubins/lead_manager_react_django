@@ -327,6 +327,44 @@ for now we imported all neccessary data to validate a user, next we will setup, 
 
 *******************************************************************************************
 
+we will now creata an action to log in, we will now go to actions, auth.js, but before we do that we will add 2 new tyes in types.js
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+export const LOGIN_FAIL = "LOGIN_FAIL";
+
+just created login in auth.js, see code for details.
+
+we will now move to the reducer. so we go to reducers/auth.js
+
+we just imported LOGIN_FAIL, and LOGIN_SUCCESS, and defined what we want to happen in the case statements.
+
+we now need a way to call this, so we go to components/acccounts/Login.js
+
+we need a way to interact with redux, so we will import connect, proptypes, and login
+
+then after we will define mapstatetoprops, all the way at the bottom, then export default connect.
+
+*********************************************************************************************
+
+next we added login logout logic to the UI, see Header.js.
+
+we will now implement the functionality in actions/auth.js.
+
+but first we will create another type called LOGOUT_SUCCESS, then create the function in auth.js
+
+**********************************************************************************************
+
+the flow using redux seems to be, 
+1. create types, in types.js
+2. go to actions, in auth.js import the types, and define the actions, we are currently working with register action
+3. got to reducer auth, and figure out what we need to do in there.
+4. then to call it, we need to go to the register component, called Register.js.
+5. in this case we  brought in some logic from login js, but modified it.
+6. we created a new alert, so we went to Alerts.js and created a passwordsnot match alert. 
+7. finally we verified frontend authentication.
+
+
+
+
 
 
 
